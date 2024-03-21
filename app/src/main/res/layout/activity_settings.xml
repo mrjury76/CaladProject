@@ -26,18 +26,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="text"
+        android:inputType="textWebEmailAddress"
         app:layout_constraintBaseline_toBaselineOf="@+id/emailTextView"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/passwordEditText" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:autofillHints=""
@@ -45,7 +45,7 @@
         android:hint="@string/password"
         android:inputType="textWebPassword"
         app:layout_constraintBaseline_toBaselineOf="@+id/passwordTextView"
-        app:layout_constraintStart_toStartOf="@+id/editTextText3" />
+        app:layout_constraintStart_toStartOf="@+id/passwordChangeButton" />
 
     <TextView
         android:id="@+id/passwordTextView"
@@ -55,7 +55,7 @@
         android:autofillHints=""
         android:text="@string/password_text"
         app:layout_constraintEnd_toEndOf="@+id/emailTextView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <TextView
         android:id="@+id/emailTextView"
@@ -65,7 +65,7 @@
         android:layout_marginEnd="15dp"
         android:autofillHints=""
         android:text="@string/email_text"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText"
+        app:layout_constraintEnd_toStartOf="@+id/emailEditText"
         app:layout_constraintTop_toBottomOf="@+id/backButton" />
 
     <Button
@@ -74,13 +74,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/change_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.704"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/locationEditText"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/locationEditText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:autofillHints=""
@@ -88,7 +86,7 @@
         android:hint="@string/location"
         android:inputType="text"
         app:layout_constraintBaseline_toBaselineOf="@+id/locationTextView"
-        app:layout_constraintStart_toStartOf="@+id/editTextText4" />
+        app:layout_constraintStart_toStartOf="@+id/timeZoneEditText" />
 
     <TextView
         android:id="@+id/locationTextView"
@@ -97,11 +95,11 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="15dp"
         android:text="@string/location_text"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText3"
+        app:layout_constraintEnd_toStartOf="@+id/locationEditText"
         app:layout_constraintTop_toBottomOf="@+id/passwordChangeButton" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/timeZoneEditText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
@@ -109,9 +107,9 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/time_zone"
-        android:inputType="text"
+        android:inputType="datetime"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintTop_toBottomOf="@+id/locationEditText"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -119,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/time_zone_text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextText4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/timeZoneEditText"
         app:layout_constraintEnd_toEndOf="@+id/locationTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
