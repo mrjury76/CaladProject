@@ -11,17 +11,15 @@ public class Settings extends AppCompatActivity {
 
     Button account, logout;
 
-
-//    account = findViewById(R.id.accountButton);
-//    logout = findViewById(R.id.logoutButton);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        Button logout, back;
 
-        Button back = findViewById(R.id.backButton);
+        logout = findViewById(R.id.logoutButton);
+        back = findViewById(R.id.backButton);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +28,6 @@ public class Settings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
