@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class Calendar extends Fragment {
+public class CalendarFragment extends Fragment {
 
     Button add, delete;
     RecyclerView recyclerView;

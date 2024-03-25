@@ -3,9 +3,7 @@ package com.example.project;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Lifecycle;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class Menu_Adapter extends FragmentStateAdapter {
@@ -25,7 +23,7 @@ public class Menu_Adapter extends FragmentStateAdapter {
                 return homepageFragment;
             }
             case 2: {
-                Calendar calendarFragment = new Calendar();
+                CalendarFragment calendarFragment = new CalendarFragment();
                 return calendarFragment;
             }
             case 3: {

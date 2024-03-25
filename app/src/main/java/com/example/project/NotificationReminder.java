@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import androidx.core.app.NotificationCompat;
+
+import java.util.Calendar;
 import java.util.Random;
 
 public class NotificationReminder extends Service {
@@ -19,8 +21,7 @@ public class NotificationReminder extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         createNotificationChannel();
         Intent notificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this,10, notificationIntent, PendingIntent.FLAG_MUTABLE);
-
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 10, notificationIntent, PendingIntent.FLAG_MUTABLE);
         android.app.Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Calad - The Healthy Calendar App")
                 .setContentText(notificationOutput())
@@ -28,7 +29,6 @@ public class NotificationReminder extends Service {
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .build();
-
         startForeground(1, notification);
         return START_NOT_STICKY;
     }
@@ -48,6 +48,14 @@ public class NotificationReminder extends Service {
 
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+    //method to check if the day is friday, used for only sending notifications on this day.
+    public static boolean isNotificationDay() {
+        Calendar calendar = Calendar.getInstance();
+        int userDay = Calendar.MONDAY;
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        return dayOfWeek == userDay;
     }
 
     //Method to randomize and choose a random notification string to output

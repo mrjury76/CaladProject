@@ -3,15 +3,8 @@ package com.example.project;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -30,11 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //starts notification intent
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(new Intent(MainActivity.this, NotificationReminder.class));
+        //starts notification intent, if it's the preselected day to send them
+        if(NotificationReminder.isNotificationDay()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(new Intent(MainActivity.this, NotificationReminder.class));
+            }
         }
 
+        //adding tabs and fragments
         tabLayout = findViewById(R.id.tab1);
         viewPager2 = findViewById(R.id.viewpager2);
 
