@@ -20,6 +20,7 @@ public class Settings extends AppCompatActivity {
         back = findViewById(R.id.backButton);
         changePassword = findViewById(R.id.passwordChangeButton);
 
+        //back button just takes user back to main activity
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,17 +28,20 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+
+        //TODO - add logout functionality. Make user session management first?
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 //TODO Logout button
+                 //TODO
             }
         });
 
+        //TODO - change user password functionality
         changePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO change password button
+                //TODO
             }
         });
 
